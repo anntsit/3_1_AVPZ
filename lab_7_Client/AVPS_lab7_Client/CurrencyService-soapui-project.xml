@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project name="CurrencyService" resourceRoot="${projectDir}" soapui-version="4.0.1.1" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" wsaVersion="NONE" name="CurrencyWSServiceSoapBinding" type="wsdl" bindingName="{http://labs.avps/}CurrencyWSServiceSoapBinding" soapVersion="1_1" anonymous="optional" definition="http://127.0.0.1:8080/AVPS_lab7/CurrencyWSServlet?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.actions.iface.tools.jbossws.JBossWSConsumeAction@values-local"><![CDATA[<xml-fragment xmlns:con="http://eviware.com/soapui/config">
+  <con:entry key="wsdlLocation" value=""/>
+  <con:entry key="Use cached WSDL" value="false"/>
+  <con:entry key="Keep" value="true"/>
+  <con:entry key="Stacktrace" value="false"/>
+  <con:entry key="Source Directory" value="C:\Users\Наташа\workspace\AVPS_lab7_Client\src"/>
+  <con:entry key="Package" value="avps.labs.client.stubs"/>
+  <con:entry key="Binding files" value=""/>
+  <con:entry key="WSDL" value="http://127.0.0.1:8080/AVPS_lab7/CurrencyWSServlet?wsdl"/>
+  <con:entry key="Target Directory" value=""/>
+  <con:entry key="Tool Args" value=""/>
+  <con:entry key="Catalog" value=""/>
+</xml-fragment>]]></con:setting></con:settings><con:definitionCache type="TEXT" rootPart="http://127.0.0.1:8080/AVPS_lab7/CurrencyWSServlet?wsdl"><con:part><con:url>http://127.0.0.1:8080/AVPS_lab7/CurrencyWSServlet?wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="CurrencyWSService" targetNamespace="http://labs.avps/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://labs.avps/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <wsdl:types>
+    <xs:schema elementFormDefault="unqualified" targetNamespace="http://labs.avps/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="getCurrencies" type="tns:getCurrencies"/>
+      <xs:element name="getCurrenciesResponse" type="tns:getCurrenciesResponse"/>
+      <xs:element name="getCurrencyInfo" type="tns:getCurrencyInfo"/>
+      <xs:element name="getCurrencyInfoResponse" type="tns:getCurrencyInfoResponse"/>
+      <xs:complexType name="getCurrencies">
+        <xs:sequence/>
+      </xs:complexType>
+      <xs:complexType name="getCurrenciesResponse">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getCurrencyInfo">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getCurrencyInfoResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:currency"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="currency">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="currencyName" type="xs:string"/>
+          <xs:element name="EUR" type="xs:float"/>
+          <xs:element name="UAH" type="xs:float"/>
+          <xs:element name="USD" type="xs:float"/>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="getCurrencyInfoResponse">
+    <wsdl:part element="tns:getCurrencyInfoResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getCurrencies">
+    <wsdl:part element="tns:getCurrencies" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getCurrenciesResponse">
+    <wsdl:part element="tns:getCurrenciesResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getCurrencyInfo">
+    <wsdl:part element="tns:getCurrencyInfo" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="CurrencyWS">
+    <wsdl:operation name="getCurrencies">
+      <wsdl:input message="tns:getCurrencies" name="getCurrencies"></wsdl:input>
+      <wsdl:output message="tns:getCurrenciesResponse" name="getCurrenciesResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCurrencyInfo">
+      <wsdl:input message="tns:getCurrencyInfo" name="getCurrencyInfo"></wsdl:input>
+      <wsdl:output message="tns:getCurrencyInfoResponse" name="getCurrencyInfoResponse"></wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="CurrencyWSServiceSoapBinding" type="tns:CurrencyWS">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="getCurrencies">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getCurrencies">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getCurrenciesResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCurrencyInfo">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getCurrencyInfo">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getCurrencyInfoResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CurrencyWSService">
+    <wsdl:port binding="tns:CurrencyWSServiceSoapBinding" name="CurrencyWSPort">
+      <soap:address location="http://localhost:8080/AVPS_lab7/CurrencyWSServlet"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:8080/AVPS_lab7/CurrencyWSServlet</con:endpoint></con:endpoints><con:operation isOneWay="false" action="" name="getCurrencies" bindingOperationName="getCurrencies" type="Request-Response" outputName="getCurrenciesResponse" inputName="getCurrencies" receivesAttachments="false" sendsAttachments="false"><con:settings/></con:operation><con:operation isOneWay="false" action="" name="getCurrencyInfo" bindingOperationName="getCurrencyInfo" type="Request-Response" outputName="getCurrencyInfoResponse" inputName="getCurrencyInfo" receivesAttachments="false" sendsAttachments="false"><con:settings/></con:operation></con:interface><con:properties/><con:wssContainer/></con:soapui-project>

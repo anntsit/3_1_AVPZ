@@ -1,0 +1,7 @@
+Сетевой сервер Apache Derby Network Server - 10.3.3.0 - (652961) запущен и готов принимать соединения на порту 1527 на 2017-11-24 08:34:30.942 GMT 
+----------------------------------------------------------------
+2017-11-24 08:34:35.166 GMT:
+ Booting Derby version The Apache Software Foundation - Apache Derby - 10.3.3.0 - (652961): instance c013800d-015f-ed29-f57f-00000000002e
+on database directory D:\Studying\III_Cource\V_Semester\AVPZ\Solutions_Eclipse\EmployeeView\myDB  
+
+Database Class Loader started - derby.database.classpath=''

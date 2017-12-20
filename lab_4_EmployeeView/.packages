@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<packages>
+   <package name="EmployeeView.war" type="org.jboss.ide.eclipse.as.core.packages.warPackage" todir="/EmployeeView" exploded="false" inWorkspace="true">
+      <fileset dir="/EmployeeView/WebContent" includes="**/*" excludes="**/WEB-INF/lib/*.jar" inWorkspace="true" flatten="false">
+         <properties></properties>
+      </fileset>
+      <folder name="WEB-INF">
+         <folder name="lib">
+            <fileset dir="/EmployeeView/WebContent/WEB-INF/lib" includes="*.jar" inWorkspace="true" flatten="false">
+               <properties></properties>
+            </fileset>
+            <properties></properties>
+         </folder>
+         <folder name="classes">
+            <fileset dir="/EmployeeView/build/classes" includes="**/*" inWorkspace="true" flatten="false">
+               <properties></properties>
+            </fileset>
+            <properties></properties>
+         </folder>
+         <properties></properties>
+      </folder>
+      <properties>
+         <property name="org.jboss.ide.eclipse.as.core.packages.ModuleIDPropertyKey" value="1511464719780"></property>
+      </properties>
+   </package>
+   <properties></properties>
+</packages>

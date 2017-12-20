@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project name="WeatherService" resourceRoot="${projectDir}" soapui-version="4.0.1.1" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" wsaVersion="NONE" name="WeatherWSServiceSoapBinding" type="wsdl" bindingName="{http://labs.avps/}WeatherWSServiceSoapBinding" soapVersion="1_1" anonymous="optional" definition="http://127.0.0.1:8080/AVPS_lab7/WeatherWSServlet?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.actions.iface.tools.jbossws.JBossWSConsumeAction@values-local"><![CDATA[<xml-fragment xmlns:con="http://eviware.com/soapui/config">
+  <con:entry key="wsdlLocation" value=""/>
+  <con:entry key="Use cached WSDL" value="false"/>
+  <con:entry key="Keep" value="true"/>
+  <con:entry key="Stacktrace" value="false"/>
+  <con:entry key="Source Directory" value="C:\Users\Наташа\workspace\AVPS_lab7_Client\src"/>
+  <con:entry key="Package" value="avps.labs.client.stubs"/>
+  <con:entry key="Binding files" value=""/>
+  <con:entry key="WSDL" value="http://127.0.0.1:8080/AVPS_lab7/WeatherWSServlet?wsdl"/>
+  <con:entry key="Target Directory" value=""/>
+  <con:entry key="Tool Args" value=""/>
+  <con:entry key="Catalog" value=""/>
+</xml-fragment>]]></con:setting></con:settings><con:definitionCache type="TEXT" rootPart="http://127.0.0.1:8080/AVPS_lab7/WeatherWSServlet?wsdl"><con:part><con:url>http://127.0.0.1:8080/AVPS_lab7/WeatherWSServlet?wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="WeatherWSService" targetNamespace="http://labs.avps/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://labs.avps/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <wsdl:types>
+    <xs:schema elementFormDefault="unqualified" targetNamespace="http://labs.avps/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="getCities" type="tns:getCities"/>
+      <xs:element name="getCitiesResponse" type="tns:getCitiesResponse"/>
+      <xs:element name="getWeatherInfo" type="tns:getWeatherInfo"/>
+      <xs:element name="getWeatherInfoResponse" type="tns:getWeatherInfoResponse"/>
+      <xs:complexType name="getWeatherInfo">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getWeatherInfoResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:weatherInfo"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="weatherInfo">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="city" type="xs:string"/>
+          <xs:element minOccurs="0" name="cloudiness" type="xs:string"/>
+          <xs:element minOccurs="0" name="precipitations" type="xs:string"/>
+          <xs:element name="temperature" type="xs:int"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getCities">
+        <xs:sequence/>
+      </xs:complexType>
+      <xs:complexType name="getCitiesResponse">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="getCitiesResponse">
+    <wsdl:part element="tns:getCitiesResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getWeatherInfo">
+    <wsdl:part element="tns:getWeatherInfo" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getCities">
+    <wsdl:part element="tns:getCities" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getWeatherInfoResponse">
+    <wsdl:part element="tns:getWeatherInfoResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="WeatherWS">
+    <wsdl:operation name="getWeatherInfo">
+      <wsdl:input message="tns:getWeatherInfo" name="getWeatherInfo"></wsdl:input>
+      <wsdl:output message="tns:getWeatherInfoResponse" name="getWeatherInfoResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCities">
+      <wsdl:input message="tns:getCities" name="getCities"></wsdl:input>
+      <wsdl:output message="tns:getCitiesResponse" name="getCitiesResponse"></wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WeatherWSServiceSoapBinding" type="tns:WeatherWS">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="getWeatherInfo">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getWeatherInfo">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getWeatherInfoResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCities">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getCities">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getCitiesResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WeatherWSService">
+    <wsdl:port binding="tns:WeatherWSServiceSoapBinding" name="WeatherWSPort">
+      <soap:address location="http://localhost:8080/AVPS_lab7/WeatherWSServlet"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:8080/AVPS_lab7/WeatherWSServlet</con:endpoint></con:endpoints><con:operation isOneWay="false" action="" name="getCities" bindingOperationName="getCities" type="Request-Response" outputName="getCitiesResponse" inputName="getCities" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/></con:operation><con:operation isOneWay="false" action="" name="getWeatherInfo" bindingOperationName="getWeatherInfo" type="Request-Response" outputName="getWeatherInfoResponse" inputName="getWeatherInfo" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/></con:operation></con:interface><con:properties/><con:wssContainer/></con:soapui-project>

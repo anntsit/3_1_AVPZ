@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MeetingInfo>
+
+	<Meeting date="30.11.2017" time="17:45">
+		<MeetingPersonName>Deepak Alur</MeetingPersonName>
+		<MeetingPlace>Kreshatic Station</MeetingPlace>
+	</Meeting>
+	
+	<Meeting date="12.12.2017" time="17:45">
+		<MeetingPersonName>Kris Brown</MeetingPersonName>
+		<MeetingPlace>Klovska Station</MeetingPlace>
+	</Meeting>
+	
+	<Meeting date="12.12.2017" time="09:25">
+		<MeetingPersonName>Bruce Eckel</MeetingPersonName>
+		<MeetingPlace>Politechnic Institute Station</MeetingPlace>
+	</Meeting>
+	
+	<Meeting date="05.12.2017" time="13:00">
+		<MeetingPersonName>Eduard Freeman</MeetingPersonName>
+		<MeetingPlace>Nivki Station</MeetingPlace>
+	</Meeting>
+	
+	<Meeting date="12.12.2017" time="17:45">
+		<MeetingPersonName>Deepak Alur</MeetingPersonName>
+		<MeetingPlace>Kreshatic Station</MeetingPlace>
+	</Meeting>
+	
+	<Meeting date="05.12.2017" time="17:45">
+		<MeetingPersonName>Mike Snow</MeetingPersonName>
+		<MeetingPlace>Maidan Station</MeetingPlace>
+	</Meeting>
+	
+	<Meeting date="22.12.2017" time="09:25">
+		<MeetingPersonName>Adam Shild</MeetingPersonName>
+		<MeetingPlace>Politechnic Institute Station</MeetingPlace>
+	</Meeting>
+	
+	<Meeting date="27.12.2017" time="13:00">
+		<MeetingPersonName>John Mor</MeetingPersonName>
+		<MeetingPlace>Zoloti Vorota Station</MeetingPlace>
+	</Meeting>
+	
+ </MeetingInfo>
